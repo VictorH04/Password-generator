@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import Cards from '../components/Cards';
 import InputBox from '../components/InputBox';
-import { IPasswordState } from '../interfaces';
+import { IPasswordCardItems } from '../interfaces';
 import '../SASS/base/_Home.scss';
 
 const Home = () => {
-  const [passwordCards, setPasswordCards] = useState<any[]>([]);
+  const [passwordCards, setPasswordCards] = useState<IPasswordCardItems[]>([]);
 
   return (
     <div className="Home">

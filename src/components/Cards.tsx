@@ -1,13 +1,6 @@
 import { useEffect } from 'react';
 import api from '../api/api';
-import { IPasswordState } from '../interfaces';
-
-interface IPasswordCardItems {
-    id: string,
-    title: string,
-    dateTime: string,
-    password: string,
-}
+import { IPasswordCardItems } from '../interfaces';
 
 interface ICardProps {
     passwordCards: IPasswordCardItems[],

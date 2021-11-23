@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { format } from 'date-fns';
 import api from '../api/api';
-import { IPasswordState } from '../interfaces';
+import { IPasswordCardItems } from '../interfaces';
 
 interface IInputBoxProps {
-    passwordCards: string[],
+    passwordCards: IPasswordCardItems[],
     setPasswordCards: (allCards: any[]) => void,
 }
 
