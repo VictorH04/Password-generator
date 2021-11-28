@@ -3,4 +3,5 @@ export interface IPasswordCardItems {
     title: string,
     dateTime: string,
     password: string,
+    showPassword: boolean,
 }

@@ -1,13 +1,13 @@
 import '../SASS/base/_InputBox.scss';
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { format } from 'date-fns';
 import api from '../api/api';
 import { IPasswordCardItems } from '../interfaces';
 
 interface IInputBoxProps {
-    passwordCards: IPasswordCardItems[],
-    setPasswordCards: (allCards: any[]) => void,
+  passwordCards: IPasswordCardItems[],
+  setPasswordCards: (allCards: any[]) => void,
 }
 
 const InputBox = ({ passwordCards, setPasswordCards }: IInputBoxProps) => {
@@ -21,7 +21,7 @@ const InputBox = ({ passwordCards, setPasswordCards }: IInputBoxProps) => {
     const id = uuidv4();
     const dateTime = format(new Date(), 'MMMM dd, yyyy pp');
     const newPasswordCard = {
-      id, title: nameInput, dateTime, password: randomPassword,
+      id, title: nameInput, dateTime, password: randomPassword, showPassword: false,
     };
 
     try {
@@ -67,12 +67,13 @@ const InputBox = ({ passwordCards, setPasswordCards }: IInputBoxProps) => {
           {' '}
           {sliderLength}
         </p>
+        <p className="inputBox-generatorWrap_text">
+          Generated password:
+          {' '}
+          {randomPassword}
+        </p>
       </div>
-
-      <div className="inputBox-generatorWrap">
-        <p className="inputBox-generatorWrap_text">{randomPassword}</p>
-      </div>
-      <button type="submit" onClick={handleSubmit}>Save password</button>
+      <button type="submit" disabled={nameInput.length < 2} onClick={handleSubmit}>Save password</button>
     </form>
   );
 };

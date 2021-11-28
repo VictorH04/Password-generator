@@ -10,10 +10,12 @@
     background-color: #f1f8ff;
     min-height: min-content;
 
+    overflow-y: auto;
+
     &-container {
         display: grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 100px 1fr;
+        grid-template-rows: 100px 1fr 1fr;
 
         position: relative;
         height: 100%;
