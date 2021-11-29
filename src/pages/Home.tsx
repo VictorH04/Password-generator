@@ -19,17 +19,20 @@ const Home = () => {
   };
 
   return (
-    <div className="Home">
-      <div className="Home-container">
-        <h1 className="Home-container_title">Password Generator</h1>
-        <InputBox passwordCards={passwordCards} setPasswordCards={setPasswordCards} />
-        <Cards
-          passwordCards={passwordCards}
-          setPasswordCards={setPasswordCards}
-          handleDelete={handleDelete}
-        />
+    <>
+      <img src={`${process.env.PUBLIC_URL}/imgs/background.svg`} className="background" alt="" srcSet="" />
+      <div className="Home">
+        <div className="Home-container">
+          <h1 className="Home-container_title">Password Generator</h1>
+          <InputBox passwordCards={passwordCards} setPasswordCards={setPasswordCards} />
+          <Cards
+            passwordCards={passwordCards}
+            setPasswordCards={setPasswordCards}
+            handleDelete={handleDelete}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

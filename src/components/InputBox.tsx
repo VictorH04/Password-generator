@@ -61,19 +61,30 @@ const InputBox = ({ passwordCards, setPasswordCards }: IInputBoxProps) => {
       </div>
 
       <div className="inputBox-sliderWrap">
-        <input type="range" min="5" max="100" value={sliderLength} onChange={(e: any) => generate(e)} required name="passwordLength" id="passwordLength" />
-        <p className="inputBox-sliderWrap_number">
+        <input
+          type="range"
+          min="5"
+          max="100"
+          className="inputBox-sliderWrap_slider"
+          value={sliderLength}
+          onChange={(e: any) => generate(e)}
+          onClick={(e: any) => generate(e)}
+          required
+          name="passwordLength"
+          id="passwordLength"
+        />
+        <p className="inputBox-sliderWrap_length">
           Password length:
           {' '}
           {sliderLength}
         </p>
-        <p className="inputBox-generatorWrap_text">
+        <p className="inputBox-sliderWrap_text">
           Generated password:
           {' '}
           {randomPassword}
         </p>
       </div>
-      <button type="submit" disabled={nameInput.length < 2} onClick={handleSubmit}>Save password</button>
+      <button type="submit" className="inputBox-saveBtn" disabled={nameInput.length < 2} onClick={handleSubmit}>Save password</button>
     </form>
   );
 };

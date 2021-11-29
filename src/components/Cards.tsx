@@ -61,13 +61,13 @@ const Cards = ({ passwordCards, setPasswordCards, handleDelete }: ICardProps) =>
                 {' '}
                 {card.dateTime}
               </h2>
-              <h2 className="passwordCard-password" style={{ display: 'flex' }}>
+              <h2 className="passwordCard-password">
                 {!card.showPassword ? [...Array(card.password.length)].map(
                   () => <p>&#9679;</p>,
-                ) : card.password}
+                ) : `Your password: ${card.password}`}
               </h2>
-              <button type="button" onClick={() => showCardPassword(card.id)}>Show password</button>
-              <button type="button" onClick={() => handleDelete(card.id)}>Delete card</button>
+              <button type="button" className="passwordCard-showPasswordBtn" onClick={() => showCardPassword(card.id)}>Show password</button>
+              <button type="button" className="passwordCard-deleteBtn" onClick={() => handleDelete(card.id)}>Delete card</button>
             </div>
             <h1>{card.showPassword}</h1>
           </>
